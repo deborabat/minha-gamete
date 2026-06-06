@@ -1,0 +1,137 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-06-06",
+  "__export_source": "insomnia",
+  "resources": [
+    {
+      "_id": "wrk_gameteca",
+      "_type": "workspace",
+      "name": "Minha Gameteca",
+      "description": "Coleção de requisições para os 3 microsserviços da Gameteca"
+    },
+    {
+      "_id": "fld_catalogo",
+      "_type": "request_group",
+      "parentId": "wrk_gameteca",
+      "name": "📦 catalogo-service (3001)"
+    },
+    {
+      "_id": "fld_usuarios",
+      "_type": "request_group",
+      "parentId": "wrk_gameteca",
+      "name": "👤 usuarios-service (3002)"
+    },
+    {
+      "_id": "fld_biblioteca",
+      "_type": "request_group",
+      "parentId": "wrk_gameteca",
+      "name": "🎮 biblioteca-service (3000)"
+    },
+    {
+      "_id": "req_get_jogos",
+      "_type": "request",
+      "parentId": "fld_catalogo",
+      "name": "Listar todos os jogos",
+      "method": "GET",
+      "url": "http://localhost:3001/jogos",
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_get_jogo_id",
+      "_type": "request",
+      "parentId": "fld_catalogo",
+      "name": "Buscar jogo por ID",
+      "method": "GET",
+      "url": "http://localhost:3001/jogos/1",
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_post_jogo",
+      "_type": "request",
+      "parentId": "fld_catalogo",
+      "name": "Cadastrar novo jogo",
+      "method": "POST",
+      "url": "http://localhost:3001/jogos",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"Celeste\",\n  \"plataforma\": \"PC\",\n  \"genero\": \"Plataforma\"\n}"
+      }
+    },
+    {
+      "_id": "req_delete_jogo",
+      "_type": "request",
+      "parentId": "fld_catalogo",
+      "name": "Remover jogo",
+      "method": "DELETE",
+      "url": "http://localhost:3001/jogos/1",
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_get_usuarios",
+      "_type": "request",
+      "parentId": "fld_usuarios",
+      "name": "Listar todos os usuários",
+      "method": "GET",
+      "url": "http://localhost:3002/usuarios",
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_get_usuario_id",
+      "_type": "request",
+      "parentId": "fld_usuarios",
+      "name": "Buscar usuário por ID",
+      "method": "GET",
+      "url": "http://localhost:3002/usuarios/1",
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_post_usuario",
+      "_type": "request",
+      "parentId": "fld_usuarios",
+      "name": "Cadastrar novo usuário",
+      "method": "POST",
+      "url": "http://localhost:3002/usuarios",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Debora\",\n  \"email\": \"debora@email.com\"\n}"
+      }
+    },
+    {
+      "_id": "req_post_biblioteca",
+      "_type": "request",
+      "parentId": "fld_biblioteca",
+      "name": "Adicionar jogo à biblioteca",
+      "method": "POST",
+      "url": "http://localhost:3000/biblioteca",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"usuarioId\": 1,\n  \"jogoId\": 2\n}"
+      }
+    },
+    {
+      "_id": "req_get_biblioteca",
+      "_type": "request",
+      "parentId": "fld_biblioteca",
+      "name": "Ver biblioteca do usuário",
+      "method": "GET",
+      "url": "http://localhost:3000/biblioteca/1",
+      "headers": [],
+      "body": {}
+    }
+  ]
+}
